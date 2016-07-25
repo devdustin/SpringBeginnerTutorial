@@ -32,8 +32,7 @@ public class ExampleRunner {
 		/* END CONSTRUCTOR INJECTION */
 		
 		/* SETTER INJECTION */
-		ClassDependency setterInjectionDependency = new ClassDependency();
-		setterInjectionDependency.setInjectionType("from setter");
+		ClassDependency setterInjectionDependency = new ClassDependency();		
 		
 		// setter dependency injection happens here
 		runner.setClassDependency(setterInjectionDependency);
