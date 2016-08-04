@@ -2,28 +2,28 @@ package com.devdustin.springbeginnertutorial.dependencyinjection;
 
 public class ExampleRunner {
 	
-	private ClassDependency classDependency;
+	private InterfaceDependency interfaceDependency;
 	
 	// constructor injection
-	public ExampleRunner(ClassDependency dependency) {
+	public ExampleRunner(InterfaceDependency dependency) {
 		dependency.setInjectionType("constructor");
-		this.classDependency = dependency;				
+		this.interfaceDependency = dependency;				
 	}
 	
 	// setter injection
-	public void setClassDependency(ClassDependency dependency) {
+	public void setClassDependency(InterfaceDependency dependency) {
 		dependency.setInjectionType("setter");
-		this.classDependency = dependency;	
+		this.interfaceDependency = dependency;	
 	}
 
 	public void run() {
 		System.out.println("running...");
-		System.out.println(String.format("Dependency injection that was used: %s", this.classDependency.getInjectionType()));
+		System.out.println(String.format("Dependency injection that was used: %s", this.interfaceDependency.getInjectionType()));
 	}
 
 	public static void main(String[] args) {
 		/* CONSTRUCTOR INJECTION */
-		ClassDependency constructorInjectionDependency = new ClassDependency();
+		InterfaceDependency constructorInjectionDependency = new InterfaceDependencyImpl();
 		
 		// constructor dependency injection happens here
 		ExampleRunner runner = new ExampleRunner(constructorInjectionDependency);
@@ -32,7 +32,7 @@ public class ExampleRunner {
 		/* END CONSTRUCTOR INJECTION */
 		
 		/* SETTER INJECTION */
-		ClassDependency setterInjectionDependency = new ClassDependency();		
+		InterfaceDependency setterInjectionDependency = new InterfaceDependencyImpl();		
 		
 		// setter dependency injection happens here
 		runner.setClassDependency(setterInjectionDependency);
