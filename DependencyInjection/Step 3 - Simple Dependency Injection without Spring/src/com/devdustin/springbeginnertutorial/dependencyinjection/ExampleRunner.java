@@ -3,6 +3,9 @@ package com.devdustin.springbeginnertutorial.dependencyinjection;
 public class ExampleRunner {
 	
 	private InterfaceDependency interfaceDependency;
+
+	public ExampleRunner() {
+	}
 	
 	// constructor injection
 	public ExampleRunner(InterfaceDependency dependency) {
@@ -26,18 +29,19 @@ public class ExampleRunner {
 		InterfaceDependency constructorInjectionDependency = new InterfaceDependencyImpl();
 		
 		// constructor dependency injection happens here
-		ExampleRunner runner = new ExampleRunner(constructorInjectionDependency);
+		ExampleRunner firstRunner = new ExampleRunner(constructorInjectionDependency);
 		
-		runner.run();
+		firstRunner.run();
 		/* END CONSTRUCTOR INJECTION */
 		
 		/* SETTER INJECTION */
 		InterfaceDependency setterInjectionDependency = new InterfaceDependencyImpl();		
 		
 		// setter dependency injection happens here
-		runner.setClassDependency(setterInjectionDependency);
+		ExampleRunner secondRunner = new ExampleRunner(); 
+		secondRunner.setClassDependency(setterInjectionDependency);
 		
-		runner.run();
+		secondRunner.run();
 		/* END SETTER INJECTION */
 	}
 }
