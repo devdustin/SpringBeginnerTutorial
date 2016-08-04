@@ -14,7 +14,7 @@ public class ExampleRunner {
 	}
 	
 	// setter injection
-	public void setClassDependency(InterfaceDependency dependency) {
+	public void setDependency(InterfaceDependency dependency) {
 		dependency.setInjectionType("setter");
 		this.interfaceDependency = dependency;	
 	}
@@ -39,7 +39,7 @@ public class ExampleRunner {
 		
 		// setter dependency injection happens here
 		ExampleRunner secondRunner = new ExampleRunner(); 
-		secondRunner.setClassDependency(setterInjectionDependency);
+		secondRunner.setDependency(setterInjectionDependency);
 		
 		secondRunner.run();
 		/* END SETTER INJECTION */
