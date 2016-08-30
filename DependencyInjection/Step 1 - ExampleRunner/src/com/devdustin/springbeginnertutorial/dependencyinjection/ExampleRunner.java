@@ -9,5 +9,8 @@ public class ExampleRunner {
 	public static void main(String[] args) {
 		ExampleRunner runner = new ExampleRunner();		
 		runner.run();
+		
+		DependencyInjectionWithSpring dep = new DependencyInjectionWithSpring();
+		dep.run();
 	}
 }
