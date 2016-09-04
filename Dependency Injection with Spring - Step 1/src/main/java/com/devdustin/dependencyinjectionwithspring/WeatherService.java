@@ -1,4 +1,4 @@
-package com.devdustin.springbootintro;
+package com.devdustin.dependencyinjectionwithspring;
 
 import org.springframework.stereotype.Component;
 

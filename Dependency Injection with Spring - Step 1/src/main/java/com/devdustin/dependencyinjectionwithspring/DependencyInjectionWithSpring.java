@@ -1,4 +1,4 @@
-package com.devdustin.springbootintro;
+package com.devdustin.dependencyinjectionwithspring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
